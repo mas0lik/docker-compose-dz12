@@ -1,3 +1,9 @@
+#This Docker-Compose sets up 3 containers:
+#databse: this container is based on base mysql 5.7 image
+#stagin: this container is used to build PAAS webapp, appropriate Dockerfile is used for image
+#production: this container is used to hos PAAS webapp in Tomcat9 webserver, appropriate Dockerfile is used for image
+#Use URL to access PAAS app:
+#http://34.68.44.187:8080/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT
 version: '3'
 services:
   database:
@@ -23,6 +29,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - application-volume:/home/pkhramchenkov/App42PaaS-Java-MySQL-Sample/target/
+      - properties-volume:/home/pkhramchenkov/App42PaaS-Java-MySQL-Sample/WebContent/
 
   production:
     build:
@@ -34,11 +41,13 @@ services:
       - "8080:8080"
     volumes:
       - application-volume:/usr/local/tomcat/webapps/
+      - properties-volume:/usr/local/tomcat/ROOT/
     networks:
       - network
 
 volumes:
   database-volume:
   application-volume:
+  properties-volume:
 networks:
   network:
