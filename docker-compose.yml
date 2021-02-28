@@ -10,7 +10,7 @@ services:
     image: mysql:5.7
     environment:
       - MYSQL_ROOT_PASSWORD=secret
-      - MYSQL_DATABASE=paasdb
+      - MYSQL_DATABASE=mysql
       - MYSQL_USER=paasdb_user
       - MYSQL_PASSWORD=secret
     healthcheck:
