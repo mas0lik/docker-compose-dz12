@@ -16,7 +16,7 @@ WORKDIR /home/pkhramchenkov/App42PaaS-Java-MySQL-Sample/
 RUN echo "app42.paas.db.username = paasdb_user" > WebContent/Config.properties
 RUN echo "app42.paas.db.port = 3306" >> WebContent/Config.properties
 RUN echo "app42.paas.db.password = secret" >> WebContent/Config.properties
-RUN echo "app42.paas.db.ip = mysql" >> WebContent/Config.properties
+RUN echo "app42.paas.db.ip = database" >> WebContent/Config.properties
 RUN echo "app42.paas.db.name = paasdb" >> WebContent/Config.properties
 
 #Build app
