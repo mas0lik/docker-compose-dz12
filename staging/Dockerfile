@@ -18,6 +18,7 @@ RUN /bin/bash -c echo -e "app42.paas.db.port = '"'3306'"'" >> WebContent/Config.
 RUN /bin/bash -c echo -e "app42.paas.db.password = '"'secret'"'" >> WebContent/Config.properties
 RUN /bin/bash -c echo -e "app42.paas.db.ip = '"'mysql'"'" >> WebContent/Config.properties
 RUN /bin/bash -c echo -e "app42.paas.db.name = '"'paasdb'"'" >> WebContent/Config.properties
+RUN cat WebContent/Config.properties
 
 #Build app
 RUN mvn package
