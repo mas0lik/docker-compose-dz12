@@ -9,10 +9,10 @@ services:
   database:
     image: mysql:5.7
     environment:
-      MYSQL_ROOT_PASSWORD: secret
-      MYSQL_DATABASE: paasdb
-      MYSQL_USER: paasdb_user
-      MYSQL_PASSWORD: secret
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_DATABASE=paasdb
+      - MYSQL_USER=paasdb_user
+      - MYSQL_PASSWORD=secret
     healthcheck:
       test: mysql --user=$$MYSQL_USER --password=$$MYSQL_PASSWORD -e 'SHOW DATABASES;'
       timeout: 5s
