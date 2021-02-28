@@ -13,11 +13,11 @@ RUN git clone https://github.com/shephertz/App42PaaS-Java-MySQL-Sample.git
 WORKDIR /home/pkhramchenkov/App42PaaS-Java-MySQL-Sample/
 
 #Replace content of 'Config.properties' with actual database parametres for app-db connection prior build
-RUN /bin/bash echo -e "app42.paas.db.username = paasdb_user" > WebContent/Config.properties
-RUN /bin/bash echo -e "app42.paas.db.port = 3306" >> WebContent/Config.properties
-RUN /bin/bash echo -e "app42.paas.db.password = secret" >> WebContent/Config.properties
-RUN /bin/bash echo -e "app42.paas.db.ip = mysql" >> WebContent/Config.properties
-RUN /bin/bash echo -e "app42.paas.db.name = paasdb" >> WebContent/Config.properties
+RUN echo -e "app42.paas.db.username = paasdb_user" > WebContent/Config.properties
+RUN echo -e "app42.paas.db.port = 3306" >> WebContent/Config.properties
+RUN echo -e "app42.paas.db.password = secret" >> WebContent/Config.properties
+RUN echo -e "app42.paas.db.ip = mysql" >> WebContent/Config.properties
+RUN echo -e "app42.paas.db.name = paasdb" >> WebContent/Config.properties
 
 #Build app
 RUN mvn package
